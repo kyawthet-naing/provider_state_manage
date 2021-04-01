@@ -19,19 +19,13 @@ class ShoppingCart extends StatelessWidget {
                   height: 80,
                   child: Row(
                     children: [
-                      Text(
-                          cartData.cartList[index].name,
+                      Text(cartData.cartList[index].name,
                           style: TextStyle(fontSize: 20, color: Colors.blue)),
                       Spacer(),
-                      cartData.checkExistInCart(product: cartData.cartList[index])
-                          ? Reusable.existItem(
-                              cartData: cartData,
-                              index: index,
-                              list: cartData.cartList)
-                          : Reusable.notExistItem(
-                              cartData: cartData,
-                              index: index,
-                              list: cartData.cartList)
+                      Reusable.existItem(
+                          cartData: cartData,
+                          index: index,
+                          list: cartData.cartList)
                     ],
                   ),
                 ),
